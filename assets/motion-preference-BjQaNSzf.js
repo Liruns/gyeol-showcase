@@ -1,0 +1,1 @@
+import{a as e}from"./hooks-BMOArZLL.js";function t(){let t=e();return{reduced:t,motion:t?`reduce`:`full`}}export{t};
