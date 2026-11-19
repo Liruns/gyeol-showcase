@@ -1,0 +1,1 @@
+var e={street:`photo-1449824913935-59a10b8d2000`,desk:`photo-1449247709967-d4461a6a6103`},t=(e,t)=>`https://images.unsplash.com/${e}?auto=format&fit=crop&w=${t[0]}&q=${t[1]}`;export{e as n,t};

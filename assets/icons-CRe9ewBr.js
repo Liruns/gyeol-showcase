@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-Wy9s6hX0.js";var t=e();function n({children:e,strokeWidth:n=2}){return(0,t.jsx)(`svg`,{viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:n,strokeLinecap:`round`,strokeLinejoin:`round`,focusable:`false`,children:e})}function r(...e){return(0,t.jsx)(n,{children:e.map(e=>(0,t.jsx)(`path`,{d:e},e))})}export{r as n,n as t};

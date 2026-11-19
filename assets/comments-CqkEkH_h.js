@@ -1,0 +1,1 @@
+function e(t,n,r){return n===null?[...t,r]:t.map(t=>t.id===n?{...t,replies:[...t.replies??[],r]}:t.replies?{...t,replies:e(t.replies,n,r)}:t)}export{e as t};

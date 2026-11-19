@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./jsx-runtime-Wy9s6hX0.js";var n=e(t(),1);function r(e){let[t,r]=(0,n.useState)(null);return{highlighted:t??e,hover:e=>t=>{t.pointerType===`mouse`&&r(e)},clear:()=>r(null)}}export{r as t};

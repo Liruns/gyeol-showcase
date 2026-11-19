@@ -1,0 +1,1 @@
+.admin-advanced-fields{gap:var(--g-space-4);padding-block:var(--g-space-3);display:grid}.admin-advanced-fields>:last-child{max-inline-size:20rem}.admin-regions{gap:var(--g-space-2) var(--g-space-5);flex-wrap:wrap;display:flex}.admin-state{color:var(--g-muted)}.admin-state[data-active]{color:var(--g-ink)}.admin-editor{gap:var(--g-space-4);min-inline-size:0;display:grid}

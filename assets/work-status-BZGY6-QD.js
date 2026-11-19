@@ -1,0 +1,1 @@
+var e=[`pending`,`running`,`complete`,`error`,`cancelled`],t={pending:`대기 중`,running:`진행 중`,complete:`완료`,error:`오류`,cancelled:`취소됨`};export{e as n,t};

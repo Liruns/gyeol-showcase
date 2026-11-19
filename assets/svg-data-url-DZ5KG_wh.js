@@ -1,0 +1,1 @@
+var e=e=>`data:image/svg+xml,${encodeURIComponent(e)}`;export{e as t};

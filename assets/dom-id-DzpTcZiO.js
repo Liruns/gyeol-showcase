@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./jsx-runtime-Wy9s6hX0.js";var n=e(t(),1);function r(e){return`${e}-${(0,n.useId)().replace(/[^a-zA-Z0-9_-]/g,``)}`}export{r as t};

@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./jsx-runtime-Wy9s6hX0.js";var n=e(t(),1);function r(){let e=(0,n.useRef)(new Map);return{map:e,ref:t=>n=>{n?e.current.set(t,n):e.current.delete(t)}}}export{r as t};

@@ -1,0 +1,1 @@
+function e(e){let t=e.indexOf(`export const doc`);return t<0?e.trim():e.slice(0,t).replace(/^const usage = usageSource\(demoSource\);?\r?\n/gm,``).replace(/^import[^\n]*(?:ComponentDoc|\?raw|usage-source)[^\n]*\n/gm,``).trim()}export{e as t};

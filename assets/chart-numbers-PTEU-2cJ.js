@@ -1,0 +1,1 @@
+var e=e=>Number(e.toFixed(2)),t=e=>Math.round(e*100)/100,n=e,r=new Intl.NumberFormat(`ko-KR`),i=e=>r.format(e),a=i;export{t as a,e as i,i as n,n as r,a as t};

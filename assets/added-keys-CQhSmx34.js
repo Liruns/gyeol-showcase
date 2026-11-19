@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./jsx-runtime-Wy9s6hX0.js";var n=e(t(),1);function r(e){let[t,r]=(0,n.useState)(()=>({ids:e,added:new Set})),i=t.added;if(e.length!==t.ids.length||e.some((e,n)=>e!==t.ids[n])){let n=new Set(e),a=new Set(t.ids);i=new Set([...t.added].filter(e=>n.has(e)));for(let t of e)a.has(t)||i.add(t);r({ids:e,added:i})}return i}export{r as t};

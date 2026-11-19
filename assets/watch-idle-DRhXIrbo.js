@@ -1,0 +1,1 @@
+var e=[`input`,`keydown`,`compositionstart`,`pointerdown`],t=t=>{let n=document.activeElement,r=!0,i=()=>{r=!1};for(let n of e)t.addEventListener(n,i,!0);return()=>{for(let n of e)t.removeEventListener(n,i,!0);let a=document.activeElement;return r&&(a===null||a===document.body||a===n)}};export{t};

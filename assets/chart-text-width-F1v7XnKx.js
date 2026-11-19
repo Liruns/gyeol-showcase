@@ -1,0 +1,1 @@
+var e=/[\u1100-\u11ff\u2e80-\ua4cf\uac00-\ud7af\uf900-\ufaff\ufe30-\ufe4f\uff00-\uffef]/u;function t(t,n){let r=0;for(let i of t)r+=(e.test(i)?1:.62)*n;return r}export{t};

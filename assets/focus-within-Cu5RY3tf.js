@@ -1,0 +1,1 @@
+import{r as e}from"./focus-move-6MxXPHR8.js";function t(t,n,r){let i=e(t,t.find(e=>e===n),r);return i?(i.focus(),!0):!1}export{t};

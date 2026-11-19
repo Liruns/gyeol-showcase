@@ -1,0 +1,1 @@
+var e={ArrowRight:`next`,ArrowDown:`next`,ArrowLeft:`prev`,ArrowUp:`prev`,Home:`first`,End:`last`};export{e as t};

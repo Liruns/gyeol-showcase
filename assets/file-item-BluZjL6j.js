@@ -1,0 +1,1 @@
+function e(e){return e.map(e=>({...e,progress:e.progress*100}))}function t(e,t){let n=e>=1024**3?3:e>=1024**2?2:+(e>=1024),r=e/1024**n;return`${t?t.format(r):n===0||Number.isInteger(r)?String(r):r.toFixed(+(r<10))} ${[`B`,`KB`,`MB`,`GB`][n]}`}export{e as n,t};

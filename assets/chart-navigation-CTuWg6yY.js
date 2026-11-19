@@ -1,0 +1,1 @@
+function e(e,t,n,r=!1){switch(e){case`ArrowRight`:return Math.min(n-1,t+1);case`ArrowLeft`:return Math.max(0,t-1);case`ArrowDown`:return r?Math.min(n-1,t+1):null;case`ArrowUp`:return r?Math.max(0,t-1):null;case`Home`:return 0;case`End`:return n-1;default:return null}}export{e as t};

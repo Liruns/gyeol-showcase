@@ -1,0 +1,1 @@
+function e(e,t){return t.offsetTop-(e.clientHeight-t.offsetHeight)/2}function t(t,n,r){let i=e(t,n);return Math.abs(t.scrollTop-i)<1?!1:(t.scrollTo({top:i,behavior:r?`smooth`:`instant`}),!0)}export{t};

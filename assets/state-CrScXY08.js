@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./jsx-runtime-Wy9s6hX0.js";var n=e(t(),1);function r(e,t,r){let[i,a]=(0,n.useState)(t),o=e!==void 0;return[o?e:i,e=>{o||a(e),r?.(e)}]}function i(e,t,r,i=Object.is){let[a,o]=(0,n.useState)(t),s=e!==void 0,c=s?e:a,l=(0,n.useRef)(c);return l.current=c,[c,(0,n.useCallback)(e=>{i(l.current,e)||(l.current=e,s||o(e),r?.(e))},[s,r,i])]}export{i as n,r as t};
