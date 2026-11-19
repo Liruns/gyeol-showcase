@@ -1,0 +1,1 @@
+import{f as e,m as t}from"./motion-BUCJgthg.js";var n={opacity:0,transition:e(`fast`,`exit`)};function r(){return t()?{}:{"aria-hidden":!0,inert:!0,"data-exiting":``}}export{r as n,n as t};
