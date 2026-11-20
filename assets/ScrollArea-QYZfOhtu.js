@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-Wy9s6hX0.js";import{on as t}from"./boot-Cx46XDKr.js";var n=e();function r({label:e,children:r,className:i,ref:a,...o}){return(0,n.jsx)(`div`,{...o,ref:a,className:t(`g-scroll-area`,i),role:`region`,"aria-label":e,tabIndex:0,children:(0,n.jsx)(`div`,{className:`g-scroll-area-content`,children:r})})}export{r as t};
