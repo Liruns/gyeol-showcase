@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-Wy9s6hX0.js";import{un as t}from"./boot-D6j0Rd6o.js";import{a as n,n as r,p as i}from"./motion-DqG1BKcM.js";var a=e();function o({src:e,alt:o,transitionId:s,className:c}){return(0,a.jsx)(r,{children:(0,a.jsx)(i.img,{layoutId:s,transition:n,className:t(`g-image-thumbnail`,c),src:e,alt:o,draggable:!1},s)})}export{o as t};

@@ -1,0 +1,1 @@
+import{p as e}from"./motion-DqG1BKcM.js";import{t}from"./Modal-CKOYWJoN.js";var n=e.create(t);export{n as t};
