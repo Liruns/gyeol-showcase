@@ -1,0 +1,62 @@
+import{a as e,n as t,t as n}from"./jsx-runtime-Wy9s6hX0.js";import{Ct as r}from"./boot-BfDWwPwR.js";import{t as i}from"./Badge-rwba6Qq3.js";import{t as a}from"./SegmentedControl-Cb3OQ3el.js";import{t as o}from"./usage-source-BdQLyNT5.js";var s=`import {useState, type CSSProperties} from 'react';\r
+import {Badge, Button, SegmentedControl} from '@gyeol/ui';\r
+\r
+const muted: CSSProperties = {margin: 0, color: 'var(--g-muted)', fontSize: 'var(--g-text-small)'};\r
+const amount: CSSProperties = {margin: 0, fontSize: 'var(--g-text-heading-2)', fontWeight: 'var(--g-weight-semibold)', lineHeight: 'var(--g-leading-heading)', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap'};\r
+const line: CSSProperties = {display: 'flex', justifyContent: 'space-between', gap: 'var(--g-space-3)'};\r
+const header: CSSProperties = {paddingBlock: 'var(--g-space-2)', paddingInline: 'var(--g-space-3)', borderBlockEnd: 'var(--g-border-width) solid var(--g-border)', color: 'var(--g-muted)', fontSize: 'var(--g-text-small)', fontWeight: 'var(--g-weight-medium)', textAlign: 'start', whiteSpace: 'nowrap'};\r
+const cell: CSSProperties = {blockSize: 'var(--g-space-10)', paddingInline: 'var(--g-space-3)', borderBlockEnd: 'var(--g-border-width) solid var(--g-border)', whiteSpace: 'nowrap'};\r
+const first: CSSProperties = {paddingInlineStart: 0};\r
+const last: CSSProperties = {paddingInlineEnd: 0};\r
+const number: CSSProperties = {textAlign: 'end', fontVariantNumeric: 'tabular-nums'};\r
+\r
+function InvoiceCredit() {\r
+  const [view, setView] = useState('invoice');\r
+  const [applied, setApplied] = useState(false);\r
+  const columns = view === 'invoice' ? ['청구서', '번호', '발행일', '납부 기한', '금액(원)', '상태'] : ['크레딧', '번호', '발급일', '만료일', '금액(원)', '상태'];\r
+  const rows = view === 'invoice'\r
+    ? [{id: 'INV-2026-1001', label: '10월 워크스페이스 이용료', issued: '2026. 10. 1.', until: '2026. 10. 31.', amount: applied ? '198,000' : '248,000', state: 'idle' as const, status: '납부 예정'},\r
+      {id: 'INV-2026-0901', label: '9월 워크스페이스 이용료', issued: '2026. 9. 1.', until: '2026. 9. 30.', amount: '248,000', state: 'done' as const, status: '결제 완료'}]\r
+    : [{id: 'CR-2026-1012', label: '서비스 조정 크레딧', issued: '2026. 10. 12.', until: '2027. 10. 12.', amount: '+50,000', state: 'done' as const, status: applied ? '적용 완료' : '사용 가능'}];\r
+  return (\r
+    <section aria-labelledby="invoice-credit-title" style={{display: 'grid', gap: 'var(--g-space-6)', color: 'var(--g-ink)', minWidth: 0}}>\r
+      <header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--g-space-3)'}}>\r
+        <h2 id="invoice-credit-title" style={{margin: 0, fontSize: 'var(--g-text-heading-2)', lineHeight: 'var(--g-leading-heading)', letterSpacing: 'var(--g-tracking-heading)'}}>청구 및 크레딧</h2>\r
+        <Badge state="done" label="정상 이용 중"/>\r
+      </header>\r
+      <div style={{columns: '2 16rem', columnGap: 'var(--g-space-8)', columnRule: 'var(--g-border-width) solid var(--g-border)'}}>\r
+        <section aria-labelledby="invoice-credit-due" style={{breakInside: 'avoid', display: 'grid', gap: 'var(--g-space-3)', paddingBlockEnd: 'var(--g-space-6)', minWidth: 0}}>\r
+          <div style={{...line, alignItems: 'center', flexWrap: 'wrap'}}><h3 id="invoice-credit-due" style={{...muted, fontWeight: 'var(--g-weight-medium)'}}>10월 청구 예정 금액</h3><Badge state="idle" label="10월 31일 납부"/></div>\r
+          <p style={amount}>{applied ? '198,000원' : '248,000원'}</p>\r
+          <dl style={{display: 'grid', gap: 'var(--g-space-1)', margin: 0}}>\r
+            <div style={line}><dt>팀 요금제 (8명)</dt><dd style={{margin: 0, fontVariantNumeric: 'tabular-nums'}}>248,000원</dd></div>\r
+            <div style={line}><dt>크레딧</dt><dd style={{margin: 0, fontVariantNumeric: 'tabular-nums'}}>{applied ? '-50,000원' : '0원'}</dd></div>\r
+          </dl>\r
+          <p style={muted}>부가세 포함. 카드 끝자리 4821로 자동 결제돼요.</p>\r
+        </section>\r
+        <section aria-labelledby="invoice-credit-balance" style={{breakInside: 'avoid', display: 'grid', gap: 'var(--g-space-3)', justifyItems: 'start', minWidth: 0}}>\r
+          <h3 id="invoice-credit-balance" style={{...muted, fontWeight: 'var(--g-weight-medium)'}}>사용 가능한 크레딧</h3>\r
+          <p style={amount}>{applied ? '0원' : '50,000원'}</p>\r
+          <Button variant="secondary" isDisabled={applied} onPress={() => setApplied(true)}>{applied ? '이번 청구에 적용됨' : '이번 청구에 적용'}</Button>\r
+          <p role="status" style={muted}>{applied ? '크레딧 50,000원을 적용했어요.' : '2027. 10. 12.까지 사용할 수 있어요. 현금으로 환급되지 않아요.'}</p>\r
+        </section>\r
+      </div>\r
+      <div style={{display: 'grid', justifyItems: 'start', gap: 'var(--g-space-4)', minWidth: 0}}>\r
+        <SegmentedControl label="거래 내역" value={view} onChange={setView} options={[{value: 'invoice', label: '청구서'}, {value: 'credit', label: '크레딧'}]}/>\r
+        <div role="region" aria-label={view === 'invoice' ? '청구서 내역' : '크레딧 내역'} tabIndex={0} style={{justifySelf: 'stretch', overflowX: 'auto', minWidth: 0}}>\r
+          <table style={{inlineSize: '100%', borderCollapse: 'collapse', fontSize: 'var(--g-text-body)', lineHeight: 'var(--g-leading-body)'}}>\r
+            <thead><tr>{columns.map((column, index) => <th key={column} scope="col" style={{...header, ...(index === 0 ? first : {}), ...(index === 4 ? {textAlign: 'end'} : {}), ...(index === columns.length - 1 ? last : {})}}>{column}</th>)}</tr></thead>\r
+            <tbody>{rows.map(row => <tr key={row.id}>\r
+              <th scope="row" style={{...cell, ...first, textAlign: 'start', fontWeight: 'var(--g-weight-medium)'}}>{row.label}</th>\r
+              <td style={{...cell, color: 'var(--g-muted)', fontVariantNumeric: 'tabular-nums'}}>{row.id}</td>\r
+              <td style={{...cell, fontVariantNumeric: 'tabular-nums'}}>{row.issued}</td>\r
+              <td style={{...cell, fontVariantNumeric: 'tabular-nums'}}>{row.until}</td>\r
+              <td style={{...cell, ...number}}>{row.amount}</td>\r
+              <td style={{...cell, ...last}}><Badge state={row.state} label={row.status}/></td>\r
+            </tr>)}</tbody>\r
+          </table>\r
+        </div>\r
+      </div>\r
+    </section>\r
+  );\r
+}`,c=e(t(),1),l=n(),u={margin:0,color:`var(--g-muted)`,fontSize:`var(--g-text-small)`},d={margin:0,fontSize:`var(--g-text-heading-2)`,fontWeight:`var(--g-weight-semibold)`,lineHeight:`var(--g-leading-heading)`,fontVariantNumeric:`tabular-nums`,whiteSpace:`nowrap`},f={display:`flex`,justifyContent:`space-between`,gap:`var(--g-space-3)`},p={paddingBlock:`var(--g-space-2)`,paddingInline:`var(--g-space-3)`,borderBlockEnd:`var(--g-border-width) solid var(--g-border)`,color:`var(--g-muted)`,fontSize:`var(--g-text-small)`,fontWeight:`var(--g-weight-medium)`,textAlign:`start`,whiteSpace:`nowrap`},m={blockSize:`var(--g-space-10)`,paddingInline:`var(--g-space-3)`,borderBlockEnd:`var(--g-border-width) solid var(--g-border)`,whiteSpace:`nowrap`},h={paddingInlineStart:0},g={paddingInlineEnd:0},_={textAlign:`end`,fontVariantNumeric:`tabular-nums`};function v(){let[e,t]=(0,c.useState)(`invoice`),[n,o]=(0,c.useState)(!1),s=e===`invoice`?[`청구서`,`번호`,`발행일`,`납부 기한`,`금액(원)`,`상태`]:[`크레딧`,`번호`,`발급일`,`만료일`,`금액(원)`,`상태`],v=e===`invoice`?[{id:`INV-2026-1001`,label:`10월 워크스페이스 이용료`,issued:`2026. 10. 1.`,until:`2026. 10. 31.`,amount:n?`198,000`:`248,000`,state:`idle`,status:`납부 예정`},{id:`INV-2026-0901`,label:`9월 워크스페이스 이용료`,issued:`2026. 9. 1.`,until:`2026. 9. 30.`,amount:`248,000`,state:`done`,status:`결제 완료`}]:[{id:`CR-2026-1012`,label:`서비스 조정 크레딧`,issued:`2026. 10. 12.`,until:`2027. 10. 12.`,amount:`+50,000`,state:`done`,status:n?`적용 완료`:`사용 가능`}];return(0,l.jsxs)(`section`,{"aria-labelledby":`invoice-credit-title`,style:{display:`grid`,gap:`var(--g-space-6)`,color:`var(--g-ink)`,minWidth:0},children:[(0,l.jsxs)(`header`,{style:{display:`flex`,justifyContent:`space-between`,alignItems:`center`,flexWrap:`wrap`,gap:`var(--g-space-3)`},children:[(0,l.jsx)(`h2`,{id:`invoice-credit-title`,style:{margin:0,fontSize:`var(--g-text-heading-2)`,lineHeight:`var(--g-leading-heading)`,letterSpacing:`var(--g-tracking-heading)`},children:`청구 및 크레딧`}),(0,l.jsx)(i,{state:`done`,label:`정상 이용 중`})]}),(0,l.jsxs)(`div`,{style:{columns:`2 16rem`,columnGap:`var(--g-space-8)`,columnRule:`var(--g-border-width) solid var(--g-border)`},children:[(0,l.jsxs)(`section`,{"aria-labelledby":`invoice-credit-due`,style:{breakInside:`avoid`,display:`grid`,gap:`var(--g-space-3)`,paddingBlockEnd:`var(--g-space-6)`,minWidth:0},children:[(0,l.jsxs)(`div`,{style:{...f,alignItems:`center`,flexWrap:`wrap`},children:[(0,l.jsx)(`h3`,{id:`invoice-credit-due`,style:{...u,fontWeight:`var(--g-weight-medium)`},children:`10월 청구 예정 금액`}),(0,l.jsx)(i,{state:`idle`,label:`10월 31일 납부`})]}),(0,l.jsx)(`p`,{style:d,children:n?`198,000원`:`248,000원`}),(0,l.jsxs)(`dl`,{style:{display:`grid`,gap:`var(--g-space-1)`,margin:0},children:[(0,l.jsxs)(`div`,{style:f,children:[(0,l.jsx)(`dt`,{children:`팀 요금제 (8명)`}),(0,l.jsx)(`dd`,{style:{margin:0,fontVariantNumeric:`tabular-nums`},children:`248,000원`})]}),(0,l.jsxs)(`div`,{style:f,children:[(0,l.jsx)(`dt`,{children:`크레딧`}),(0,l.jsx)(`dd`,{style:{margin:0,fontVariantNumeric:`tabular-nums`},children:n?`-50,000원`:`0원`})]})]}),(0,l.jsx)(`p`,{style:u,children:`부가세 포함. 카드 끝자리 4821로 자동 결제돼요.`})]}),(0,l.jsxs)(`section`,{"aria-labelledby":`invoice-credit-balance`,style:{breakInside:`avoid`,display:`grid`,gap:`var(--g-space-3)`,justifyItems:`start`,minWidth:0},children:[(0,l.jsx)(`h3`,{id:`invoice-credit-balance`,style:{...u,fontWeight:`var(--g-weight-medium)`},children:`사용 가능한 크레딧`}),(0,l.jsx)(`p`,{style:d,children:n?`0원`:`50,000원`}),(0,l.jsx)(r,{variant:`secondary`,isDisabled:n,onPress:()=>o(!0),children:n?`이번 청구에 적용됨`:`이번 청구에 적용`}),(0,l.jsx)(`p`,{role:`status`,style:u,children:n?`크레딧 50,000원을 적용했어요.`:`2027. 10. 12.까지 사용할 수 있어요. 현금으로 환급되지 않아요.`})]})]}),(0,l.jsxs)(`div`,{style:{display:`grid`,justifyItems:`start`,gap:`var(--g-space-4)`,minWidth:0},children:[(0,l.jsx)(a,{label:`거래 내역`,value:e,onChange:t,options:[{value:`invoice`,label:`청구서`},{value:`credit`,label:`크레딧`}]}),(0,l.jsx)(`div`,{role:`region`,"aria-label":e===`invoice`?`청구서 내역`:`크레딧 내역`,tabIndex:0,style:{justifySelf:`stretch`,overflowX:`auto`,minWidth:0},children:(0,l.jsxs)(`table`,{style:{inlineSize:`100%`,borderCollapse:`collapse`,fontSize:`var(--g-text-body)`,lineHeight:`var(--g-leading-body)`},children:[(0,l.jsx)(`thead`,{children:(0,l.jsx)(`tr`,{children:s.map((e,t)=>(0,l.jsx)(`th`,{scope:`col`,style:{...p,...t===0?h:{},...t===4?{textAlign:`end`}:{},...t===s.length-1?g:{}},children:e},e))})}),(0,l.jsx)(`tbody`,{children:v.map(e=>(0,l.jsxs)(`tr`,{children:[(0,l.jsx)(`th`,{scope:`row`,style:{...m,...h,textAlign:`start`,fontWeight:`var(--g-weight-medium)`},children:e.label}),(0,l.jsx)(`td`,{style:{...m,color:`var(--g-muted)`,fontVariantNumeric:`tabular-nums`},children:e.id}),(0,l.jsx)(`td`,{style:{...m,fontVariantNumeric:`tabular-nums`},children:e.issued}),(0,l.jsx)(`td`,{style:{...m,fontVariantNumeric:`tabular-nums`},children:e.until}),(0,l.jsx)(`td`,{style:{...m,..._},children:e.amount}),(0,l.jsx)(`td`,{style:{...m,...g},children:(0,l.jsx)(i,{state:e.state,label:e.status})})]},e.id))})]})})]})]})}var y={id:`invoice-credit`,title:`청구 및 크레딧`,koreanTitle:`청구 및 크레딧`,group:`blocks`,interactions:[`select`,`press`],description:`이번 달 청구 예정 금액, 사용 가능한 크레딧과 거래 내역을 함께 두는 결제 화면입니다. 예시 데이터이며, 크레딧 적용은 이 화면에서만 반영되고 실제 결제는 일어나지 않습니다.`,demo:v,behavior:[`크레딧을 적용하면 청구 예정 금액, 크레딧 줄과 10월 청구서 금액이 함께 바뀌고, 결과 문장을 role="status"로 알립니다.`,`요약은 넓은 화면에서 두 열 사이에 구분선 하나를 두고, 좁은 화면에서는 한 열로 쌓입니다.`,`거래 내역은 표로 렌더링하며, 금액(원) 열은 오른쪽으로 맞추고 고정폭 숫자를 씁니다.`,`표가 화면보다 넓으면 표 영역이 가로로 스크롤되고, Tab으로 초점을 받은 뒤 방향키로 스크롤합니다.`],usage:o(s),whenToUse:[`이번 달 청구 예정 금액과 보유 크레딧, 거래 내역을 한 화면에서 보고 크레딧을 적용할 때 씁니다.`,`청구서 내역과 크레딧 내역을 전환하며 대조하는 결제 관리 화면에 맞습니다.`],whenNot:[`요금제를 비교해 고르는 화면은 PlanCard를 씁니다.`,`결제 일정을 날짜순으로 보여 주려면 BillingSchedule을 씁니다.`,`사용량이 한도에 가까운지 알리려면 UsageLimitCard를 씁니다.`],aiNotes:[`이 블록은 Badge, Button, SegmentedControl을 조합한 예시이고 거래 내역은 표로 그립니다.`,`크레딧 적용은 이 화면의 상태에서만 반영되고 실제 결제는 일어나지 않으므로 서버 호출은 호출자가 붙입니다.`,`금액 열은 오른쪽으로 맞추고 고정폭 숫자를 씁니다. 적용 결과 문장은 role=status로 알려야 합니다.`],props:[{name:`Badge`,type:`'@gyeol/ui'`,description:`이용 상태와 청구, 결제, 크레딧 상태 안내.`},{name:`Button`,type:`'@gyeol/ui'`,description:`보유 크레딧을 이번 달 청구서에 적용하는 동작.`},{name:`SegmentedControl`,type:`'@gyeol/ui'`,description:`청구서 내역과 크레딧 내역 전환.`}]};export{y as doc};

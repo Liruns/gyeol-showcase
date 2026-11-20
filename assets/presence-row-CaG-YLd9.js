@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-Wy9s6hX0.js";import{a as t,f as n,p as r}from"./motion-C0u2mc2J.js";import{n as i,t as a}from"./presence-Diw2ZCmA.js";var o=e();function s({className:e,busy:s,children:c}){return(0,o.jsx)(r.li,{...i(),layout:`position`,exit:a,transition:{...n(`fast`,`exit`),...t},className:e,"aria-busy":s||void 0,children:c})}export{s as t};

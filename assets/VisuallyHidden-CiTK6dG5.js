@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime-Wy9s6hX0.js";import{sn as t,tt as n}from"./boot-BeI4_wN4.js";var r=e();function i({className:e,...i}){return(0,r.jsx)(n,{...i,"data-focusable":i.isFocusable||void 0,className:t(`g-visually-hidden`,e)})}export{i as t};

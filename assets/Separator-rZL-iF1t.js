@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-Wy9s6hX0.js";import{sn as t}from"./boot-BfDWwPwR.js";var n=e();function r({orientation:e=`horizontal`,decorative:r=!1,className:i}){return(0,n.jsx)(`div`,{className:t(`g-separator`,i),"data-orientation":e,...r?{role:`none`}:{role:`separator`,...e===`vertical`?{"aria-orientation":`vertical`}:{}}})}export{r as t};
