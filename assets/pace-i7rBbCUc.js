@@ -1,0 +1,1 @@
+var e={pace:`오늘 기대치`,ahead:`앞섬`,behind:`뒤처짐`,on:`예정대로`},t=(e,t)=>e>t?`ahead`:e<t?`behind`:`on`;export{t as n,e as t};

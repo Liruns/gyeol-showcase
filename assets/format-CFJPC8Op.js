@@ -1,0 +1,2 @@
+var e=new Intl.NumberFormat(`ko-KR`),t=new Intl.DateTimeFormat(`ko-KR`,{month:`numeric`,day:`numeric`,hour:`2-digit`,minute:`2-digit`,hourCycle:`h23`}),n=(e,t)=>e===null||t===null||t===0?null:(e-t)/t,r=e=>/[",\n]/.test(String(e))?`"${String(e).replaceAll(`"`,`""`)}"`:String(e),i=e=>`﻿`+e.map(e=>e.map(r).join(`,`)).join(`\r
+`);export{e as i,i as n,t as r,n as t};

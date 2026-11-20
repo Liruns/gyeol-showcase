@@ -1,2 +1,0 @@
-var e=new Intl.NumberFormat(`ko-KR`),t=new Intl.DateTimeFormat(`ko-KR`,{month:`numeric`,day:`numeric`,hour:`2-digit`,minute:`2-digit`,hourCycle:`h23`}),n=(e,t)=>e===null||t===null||t===0?null:(e-t)/t,r=e=>/[",\n]/.test(String(e))?`"${String(e).replaceAll(`"`,`""`)}"`:String(e),i=e=>`﻿`+e.map(e=>e.map(r).join(`,`)).join(`\r
-`);function a(e,t){let n=URL.createObjectURL(new Blob([t],{type:`text/csv;charset=utf-8`}));Object.assign(document.createElement(`a`),{href:n,download:e}).click(),URL.revokeObjectURL(n)}export{e as a,t as i,n,i as r,a as t};
